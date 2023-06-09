@@ -97,12 +97,12 @@ void groupHandler() {
     }   
 }
 
-unsigned int *getHashDigest() {
-    unsigned int *result = (unsigned int *)malloc(5 * sizeof(unsigned int));
+void PrintHashDigest() {
+    std::cout << "HashDigest--> ";
     for (int i = 0; i < 5; ++i) {
-        *(result + i) |= BASIC_H[i];
+        std::cout <<  BASIC_H[i];
     }
-    return result;
+    std::cout << std::endl;
 }
 
 int main() {
@@ -112,7 +112,7 @@ int main() {
 
     fillMessage(input);
     groupHandler();
-    std::cout << "HashDigest--> " << getHashDigest() << std::endl;
+    PrintHashDigest();
 
     return 0;
 }
